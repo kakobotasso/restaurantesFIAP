@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">RestaurantesFIAP</string>
+    <string name="app_name">Restaurants FIAP</string>
+
+    <!-- SPLASH SCREEN -->
+    <string name="erro_api">Error while load application. Try again later</string>
+
+    <!-- TELA DE LOGIN -->
+    <string name="label_login">Username</string>
+    <string name="label_senha">Password</string>
+    <string name="label_botao_entrar">Sign in</string>
 </resources>
