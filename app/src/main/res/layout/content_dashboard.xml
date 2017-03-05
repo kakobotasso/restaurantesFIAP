@@ -14,4 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <TextView
+        android:id="@+id/mensagem_restaurantes_vazio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lista_vazia"
+        android:gravity="center"
+        android:padding="@dimen/activity_horizontal_margin"
+        />
+
 </LinearLayout>

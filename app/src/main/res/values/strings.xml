@@ -17,6 +17,7 @@
 
     <!-- TELA DASHBOARD -->
     <string name="title_activity_dashboard">Dashboard</string>
+    <string name="lista_vazia">You don\'t have any restaurant yet :(</string>
 
     <!-- MENU -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -33,7 +34,11 @@
     <!-- TELA FORM -->
     <string name="titulo_form">Restaurant form</string>
     <string name="label_form_nome">Restaurant\'s name</string>
-    <string name="label_form_pedido">What did you asked to eat?</string>
+    <string name="erro_form_nome">Restaurant\'s name can\'t be blank</string>
+    <string name="label_form_pedido">What did you order to eat?</string>
+    <string name="erro_form_pedido">Order can\'t be blank</string>
     <string name="label_form_opiniao">What\'s your opinion?</string>
+    <string name="erro_form_opiniao">Opinion can\'t be blank</string>
+    <string name="sucesso_form">Restaurant saved successful</string>
 
 </resources>

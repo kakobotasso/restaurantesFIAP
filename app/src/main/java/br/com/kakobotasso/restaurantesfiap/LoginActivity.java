@@ -1,7 +1,6 @@
 package br.com.kakobotasso.restaurantesfiap;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +8,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import br.com.kakobotasso.restaurantesfiap.helpers.Constantes;
-import br.com.kakobotasso.restaurantesfiap.helpers.Preferencias;
+import br.com.kakobotasso.restaurantesfiap.utils.Constantes;
+import br.com.kakobotasso.restaurantesfiap.utils.Preferencias;
 import br.com.kakobotasso.restaurantesfiap.models.Usuario;
 
 public class LoginActivity extends AppCompatActivity {

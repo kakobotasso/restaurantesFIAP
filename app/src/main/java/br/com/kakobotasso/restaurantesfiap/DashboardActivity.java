@@ -3,7 +3,6 @@ package br.com.kakobotasso.restaurantesfiap;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -13,14 +12,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.kakobotasso.restaurantesfiap.adapters.RestaurantesAdapter;
-import br.com.kakobotasso.restaurantesfiap.helpers.Preferencias;
+import br.com.kakobotasso.restaurantesfiap.database.DatabaseHelper;
+import br.com.kakobotasso.restaurantesfiap.utils.Preferencias;
 import br.com.kakobotasso.restaurantesfiap.models.Restaurante;
 
 public class DashboardActivity extends AppCompatActivity
@@ -28,6 +28,8 @@ public class DashboardActivity extends AppCompatActivity
     private Preferencias prefs;
     private RecyclerView recyclerView;
     private Toolbar toolbar;
+    private DatabaseHelper databaseHelper;
+    private TextView listaVazia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +97,8 @@ public class DashboardActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         prefs = new Preferencias(this);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        databaseHelper = new DatabaseHelper(this);
+        listaVazia = (TextView) findViewById(R.id.mensagem_restaurantes_vazio);
     }
 
     private void trataToolbar(){
@@ -123,17 +127,25 @@ public class DashboardActivity extends AppCompatActivity
     }
 
     private void populaTela(){
-        List<Restaurante> restaurantes = new ArrayList<>();
-        restaurantes.add(new Restaurante("Tiu Ze", "Açaí", "Muito bom"));
-        restaurantes.add(new Restaurante("Black dog", "Dog", "Muito bom"));
-        restaurantes.add(new Restaurante("Habibs", "Esfiha de queijo", "Bom"));
-        restaurantes.add(new Restaurante("Mexicanissimo", "Rodizio", "Excelente"));
+        List<Restaurante> restaurantes = databaseHelper.getRestaurantes();
+
+        exibeRecyclerView(restaurantes.size());
 
         RestaurantesAdapter adapter = new RestaurantesAdapter(this, restaurantes);
         recyclerView.setAdapter(adapter);
+    }
 
-        RecyclerView.LayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layout);
+    private void exibeRecyclerView(int tamanhoLista){
+        if( tamanhoLista > 0 ){
+            listaVazia.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+
+            RecyclerView.LayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+            recyclerView.setLayoutManager(layout);
+        }else{
+            listaVazia.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        }
     }
 
     private void vaiParaFormulario(){

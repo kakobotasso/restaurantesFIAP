@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -12,8 +11,8 @@ import android.widget.Toast;
 
 import br.com.kakobotasso.restaurantesfiap.api.UsuarioInterface;
 import br.com.kakobotasso.restaurantesfiap.database.DatabaseHelper;
-import br.com.kakobotasso.restaurantesfiap.helpers.Constantes;
-import br.com.kakobotasso.restaurantesfiap.helpers.Preferencias;
+import br.com.kakobotasso.restaurantesfiap.utils.Constantes;
+import br.com.kakobotasso.restaurantesfiap.utils.Preferencias;
 import br.com.kakobotasso.restaurantesfiap.models.Usuario;
 import retrofit2.Call;
 import retrofit2.Callback;

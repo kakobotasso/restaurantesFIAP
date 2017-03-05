@@ -1,4 +1,4 @@
-package br.com.kakobotasso.restaurantesfiap.helpers;
+package br.com.kakobotasso.restaurantesfiap.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

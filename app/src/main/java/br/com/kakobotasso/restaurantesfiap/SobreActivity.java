@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import br.com.kakobotasso.restaurantesfiap.helpers.Constantes;
+import br.com.kakobotasso.restaurantesfiap.utils.Constantes;
 
 public class SobreActivity extends AppCompatActivity {
 
