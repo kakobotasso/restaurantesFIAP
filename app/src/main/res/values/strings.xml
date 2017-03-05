@@ -15,14 +15,13 @@
     <string name="erro_usuario">Error while sign in. Try again later</string>
     <string name="erro_login">Username or password are incorrect. Try again later</string>
 
-
     <!-- TELA DASHBOARD -->
     <string name="title_activity_dashboard">Dashboard</string>
 
     <!-- MENU -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_salvar">Save</string>
     <string name="nav_novo_restaurante">New restaurant</string>
     <string name="nav_sobre">About the app</string>
     <string name="nav_sair">Log out</string>
@@ -30,5 +29,11 @@
     <!-- TELA SOBRE -->
     <string name="titulo_sobre">About the app</string>
     <string name="nome_dev">Kako Botasso</string>
+
+    <!-- TELA FORM -->
+    <string name="titulo_form">Restaurant form</string>
+    <string name="label_form_nome">Restaurant\'s name</string>
+    <string name="label_form_pedido">What did you asked to eat?</string>
+    <string name="label_form_opiniao">What\'s your opinion?</string>
 
 </resources>

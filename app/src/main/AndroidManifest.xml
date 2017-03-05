@@ -20,17 +20,17 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/titulo_login"
-            />
-
+            android:label="@string/titulo_login" />
         <activity
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".SobreActivity"
-            android:label="@string/titulo_sobre"
+            android:label="@string/titulo_sobre" />
+        <activity
+            android:name=".FormRestauranteActivity"
+            android:label="@string/titulo_form"
             />
     </application>
 

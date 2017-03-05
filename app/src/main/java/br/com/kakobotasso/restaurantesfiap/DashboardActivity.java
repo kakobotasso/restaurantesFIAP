@@ -64,6 +64,7 @@ public class DashboardActivity extends AppCompatActivity
 
         switch (id){
             case R.id.nav_adiciona_restaurante:
+                vaiParaFormulario();
                 break;
 
             case R.id.nav_sobre:
@@ -105,8 +106,7 @@ public class DashboardActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                vaiParaFormulario();
             }
         });
     }
@@ -134,6 +134,11 @@ public class DashboardActivity extends AppCompatActivity
 
         RecyclerView.LayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layout);
+    }
+
+    private void vaiParaFormulario(){
+        Intent form = new Intent(this, FormRestauranteActivity.class);
+        startActivity(form);
     }
 
 }
