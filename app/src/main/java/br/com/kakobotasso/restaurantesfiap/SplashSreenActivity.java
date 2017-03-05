@@ -13,6 +13,7 @@ import android.widget.Toast;
 import br.com.kakobotasso.restaurantesfiap.api.UsuarioInterface;
 import br.com.kakobotasso.restaurantesfiap.database.DatabaseHelper;
 import br.com.kakobotasso.restaurantesfiap.helpers.Constantes;
+import br.com.kakobotasso.restaurantesfiap.helpers.Preferencias;
 import br.com.kakobotasso.restaurantesfiap.models.Usuario;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,12 +23,14 @@ public class SplashSreenActivity extends AppCompatActivity {
     private DatabaseHelper helper;
     private ImageView logo;
     private final Context context = this;
+    private Preferencias preferencias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_sreen);
 
+        preferencias = new Preferencias(this);
         iniciaAnimacao();
         iniciaBD();
         buscaUsuario();
@@ -51,13 +54,19 @@ public class SplashSreenActivity extends AppCompatActivity {
         chamada.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                Usuario usuario = response.body();
-                helper.insereUsuario( usuario );
+                if( preferencias.estaLogado() ){
+                    Intent dashboard = new Intent(context, DashboardActivity.class);
+                    startActivity(dashboard);
+                    finish();
+                }else{
+                    Usuario usuario = response.body();
+                    helper.insereUsuario( usuario );
 
-                Intent login = new Intent(context, LoginActivity.class);
-                login.putExtra(Constantes.TAG_USUARIO, usuario);
-                startActivity(login);
-                finish();
+                    Intent login = new Intent(context, LoginActivity.class);
+                    login.putExtra(Constantes.TAG_USUARIO, usuario);
+                    startActivity(login);
+                    finish();
+                }
             }
 
             @Override

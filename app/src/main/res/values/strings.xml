@@ -7,5 +7,16 @@
     <!-- TELA DE LOGIN -->
     <string name="label_login">Username</string>
     <string name="label_senha">Password</string>
+    <string name="label_logado">Keep me logged in</string>
     <string name="label_botao_entrar">Sign in</string>
+    <string name="login_vazio">Username can\'t be blank</string>
+    <string name="senha_vazia">Password can\'t be blank</string>
+    <string name="erro_usuario">Error while sign in. Try again later</string>
+    <string name="erro_login">Username or password are incorrect. Try again later</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

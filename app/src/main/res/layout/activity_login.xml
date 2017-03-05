@@ -37,10 +37,18 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <CheckBox
+        android:id="@+id/check_manter_logado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_logado"
+        />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_botao_entrar"
+        android:onClick="logaUsuario"
         />
 
 </LinearLayout>
