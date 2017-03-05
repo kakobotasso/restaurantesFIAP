@@ -9,11 +9,9 @@
     tools:context="br.com.kakobotasso.restaurantesfiap.DashboardActivity"
     tools:showIn="@layout/app_bar_dashboard">
 
-    <Button
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_sobre"
-        android:onClick="vaiParaSobre"
-        />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
