@@ -15,8 +15,12 @@
     <string name="erro_login">Username or password are incorrect. Try again later</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
 
+    <!-- MENU -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+    <string name="nav_novo_restaurante">New restaurant</string>
+    <string name="nav_sobre">About the app</string>
+    <string name="nav_sair">Log out</string>
+
 </resources>

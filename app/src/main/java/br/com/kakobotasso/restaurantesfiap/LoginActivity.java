@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         String senha = senhaEdit.getText().toString();
 
         if( formularioPreenchido() ){
+            // TODO: Buscar no banco caso a variavel esteja null
             if( usuario != null ){
                 logar(login, senha);
             }else{

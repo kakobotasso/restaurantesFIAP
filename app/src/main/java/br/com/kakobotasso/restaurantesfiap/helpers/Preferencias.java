@@ -20,4 +20,10 @@ public class Preferencias {
         editor.apply();
     }
 
+    public void deslogar(){
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(Constantes.PREF_LOGADO, false);
+        editor.apply();
+    }
+
 }
