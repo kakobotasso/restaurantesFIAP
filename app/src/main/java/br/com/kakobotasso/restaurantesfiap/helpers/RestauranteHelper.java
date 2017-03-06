@@ -27,6 +27,12 @@ public class RestauranteHelper {
         return restaurante;
     }
 
+    public void colocaNoFormulario(Restaurante restaurante){
+        nomeEdit.setText(restaurante.getNome());
+        pedidoEdit.setText(restaurante.getPedido());
+        opiniaoEdit.setText(restaurante.getOpiniao());
+    }
+
     public boolean formularioValido(){
         boolean retorno = true;
 

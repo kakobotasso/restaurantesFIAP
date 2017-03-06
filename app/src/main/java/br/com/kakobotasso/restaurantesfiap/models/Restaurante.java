@@ -1,18 +1,14 @@
 package br.com.kakobotasso.restaurantesfiap.models;
 
-public class Restaurante {
+import java.io.Serializable;
+
+public class Restaurante implements Serializable{
     private Long id;
     private String nome;
     private String pedido;
     private String opiniao;
 
     public Restaurante(){}
-
-    public Restaurante(String nome, String pedido, String opiniao) {
-        this.nome = nome;
-        this.pedido = pedido;
-        this.opiniao = opiniao;
-    }
 
     public Long getId() {
         return id;

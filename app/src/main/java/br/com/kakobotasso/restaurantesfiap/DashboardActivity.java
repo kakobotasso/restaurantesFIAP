@@ -22,6 +22,7 @@ import java.util.List;
 
 import br.com.kakobotasso.restaurantesfiap.adapters.RestaurantesAdapter;
 import br.com.kakobotasso.restaurantesfiap.database.DatabaseHelper;
+import br.com.kakobotasso.restaurantesfiap.utils.Constantes;
 import br.com.kakobotasso.restaurantesfiap.utils.Preferencias;
 import br.com.kakobotasso.restaurantesfiap.models.Restaurante;
 
@@ -188,6 +189,7 @@ public class DashboardActivity extends AppCompatActivity
 
     private void editaRestaurante(){
         Intent form = new Intent(this, FormRestauranteActivity.class);
+        form.putExtra(Constantes.TAG_RESTAURANTE, restaurante);
         startActivity(form);
     }
 

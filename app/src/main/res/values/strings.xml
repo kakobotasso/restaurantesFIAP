@@ -42,6 +42,7 @@
     <string name="erro_form_pedido">Order can\'t be blank</string>
     <string name="label_form_opiniao">What\'s your opinion?</string>
     <string name="erro_form_opiniao">Opinion can\'t be blank</string>
-    <string name="sucesso_form">Restaurant saved successful</string>
+    <string name="sucesso_form">Restaurant saved successfully</string>
+    <string name="sucesso_edita_form">Restaurant updated successfully</string>
 
 </resources>

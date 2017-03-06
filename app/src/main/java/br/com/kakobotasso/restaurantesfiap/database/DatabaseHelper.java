@@ -92,6 +92,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return restaurantes;
     }
 
+    public void atualizaRestaurante(Restaurante restaurante){
+        ContentValues values = new ContentValues();
+
+        values.put("nome", restaurante.getNome());
+        values.put("pedido", restaurante.getPedido());
+        values.put("opiniao", restaurante.getOpiniao());
+
+        String[] args = { restaurante.getId().toString() };
+        getWritableDatabase().update(TABELA_RESTAURANTES, values, "id=?", args);
+    }
+
     public void deletaRestaurante(Restaurante restaurante){
         String[] args = { restaurante.getId().toString() };
         getWritableDatabase().delete(TABELA_RESTAURANTES, "id=?", args);
