@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Restaurantes FIAP</string>
+
+    <!-- SPLASH SCREEN -->
+    <string name="erro_api">Erro ao carregar aplicação. Tente novamente mais tarde</string>
+
+    <!-- TELA DE LOGIN -->
+    <string name="titulo_login">Login</string>
+    <string name="label_login">Usuário</string>
+    <string name="label_senha">Senha</string>
+    <string name="label_logado">Me mantenha logado</string>
+    <string name="label_botao_entrar">Entrar</string>
+    <string name="login_vazio">Usuário não pode ficar em branco</string>
+    <string name="senha_vazia">Senha não pode ficar em branco</string>
+    <string name="erro_usuario">Erro ao fazer login. Tente novamente mais tarde</string>
+    <string name="erro_login">Usuário ou senha incorretos.Tente novamente mais tarde</string>
+
+    <!-- TELA DASHBOARD -->
+    <string name="title_activity_dashboard">Tela inicial</string>
+    <string name="lista_vazia">Você ainda não tem nenhum restaurante cadastrado :(</string>
+    <string name="sucesso_deleta">Restaurante deletado com sucesso</string>
+
+    <!-- MENU -->
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="navigation_drawer_close">Fechar navigation drawer</string>
+    <string name="action_salvar">Salvar</string>
+    <string name="nav_novo_restaurante">Novo restaurante</string>
+    <string name="nav_sobre">Sobre o aplicativo</string>
+    <string name="nav_sair">Sair</string>
+    <string name="menu_editar">Editar</string>
+    <string name="menu_deletar">Deletar</string>
+
+    <!-- TELA SOBRE -->
+    <string name="titulo_sobre">Sobre o aplicativo</string>
+    <string name="nome_dev">Kako Botasso</string>
+
+    <!-- TELA FORM -->
+    <string name="titulo_form">Formulário do restaurante</string>
+    <string name="label_form_nome">Nome do restaurante</string>
+    <string name="erro_form_nome">Nome do restaurante não pode ficar em branco</string>
+    <string name="label_form_pedido">Qual foi o seu pedido?</string>
+    <string name="erro_form_pedido">Pedido não pode ficar em branco</string>
+    <string name="label_form_opiniao">O que você achou?</string>
+    <string name="erro_form_opiniao">Não pode ficar em branco</string>
+    <string name="sucesso_form">Restaurante salvo com sucesso</string>
+    <string name="sucesso_edita_form">Restaurante atualizado com sucesso</string>
+
+</resources>
