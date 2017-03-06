@@ -18,6 +18,7 @@
     <!-- TELA DASHBOARD -->
     <string name="title_activity_dashboard">Dashboard</string>
     <string name="lista_vazia">You don\'t have any restaurant yet :(</string>
+    <string name="sucesso_deleta">Restaurant deleted successfully</string>
 
     <!-- MENU -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -26,6 +27,8 @@
     <string name="nav_novo_restaurante">New restaurant</string>
     <string name="nav_sobre">About the app</string>
     <string name="nav_sair">Log out</string>
+    <string name="menu_editar">Edit</string>
+    <string name="menu_deletar">Delete</string>
 
     <!-- TELA SOBRE -->
     <string name="titulo_sobre">About the app</string>

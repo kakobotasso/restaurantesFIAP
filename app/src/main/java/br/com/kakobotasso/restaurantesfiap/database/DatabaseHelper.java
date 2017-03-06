@@ -92,4 +92,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return restaurantes;
     }
 
+    public void deletaRestaurante(Restaurante restaurante){
+        String[] args = { restaurante.getId().toString() };
+        getWritableDatabase().delete(TABELA_RESTAURANTES, "id=?", args);
+    }
+
 }

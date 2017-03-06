@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,12 +26,15 @@ import br.com.kakobotasso.restaurantesfiap.utils.Preferencias;
 import br.com.kakobotasso.restaurantesfiap.models.Restaurante;
 
 public class DashboardActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnCreateContextMenuListener, View.OnClickListener,
+        MenuItem.OnMenuItemClickListener {
     private Preferencias prefs;
     private RecyclerView recyclerView;
     private Toolbar toolbar;
     private DatabaseHelper databaseHelper;
     private TextView listaVazia;
+    private List<Restaurante> restaurantes;
+    private Restaurante restaurante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +132,7 @@ public class DashboardActivity extends AppCompatActivity
     }
 
     private void populaTela(){
-        List<Restaurante> restaurantes = databaseHelper.getRestaurantes();
+        restaurantes = databaseHelper.getRestaurantes();
 
         exibeRecyclerView(restaurantes.size());
 
@@ -153,4 +158,43 @@ public class DashboardActivity extends AppCompatActivity
         startActivity(form);
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        int position = recyclerView.getChildLayoutPosition(v);
+        restaurante = restaurantes.get(position);
+
+        menu.setHeaderTitle(restaurante.getNome());
+        MenuItem editar = menu.add( getString(R.string.menu_editar) );
+        MenuItem deletar = menu.add( getString(R.string.menu_deletar) );
+
+        editar.setOnMenuItemClickListener(this);
+        deletar.setOnMenuItemClickListener(this);
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem menuItem) {
+        if( menuItem.getTitle().equals( getString(R.string.menu_editar) ) ){
+            editaRestaurante();
+        }else if( menuItem.getTitle().equals( getString(R.string.menu_deletar) ) ){
+            deletaRestaurante();
+        }
+
+        return false;
+    }
+
+    @Override
+    public void onClick(View view) {}
+
+    private void editaRestaurante(){
+        Intent form = new Intent(this, FormRestauranteActivity.class);
+        startActivity(form);
+    }
+
+    private void deletaRestaurante(){
+        databaseHelper.deletaRestaurante(restaurante);
+        Toast.makeText(this, R.string.sucesso_deleta, Toast.LENGTH_SHORT).show();
+        finish();
+        startActivity(getIntent());
+    }
 }

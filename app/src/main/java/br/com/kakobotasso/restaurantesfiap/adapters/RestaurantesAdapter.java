@@ -12,7 +12,7 @@ import java.util.List;
 import br.com.kakobotasso.restaurantesfiap.R;
 import br.com.kakobotasso.restaurantesfiap.models.Restaurante;
 
-public class RestaurantesAdapter extends RecyclerView.Adapter {
+public class RestaurantesAdapter extends RecyclerView.Adapter{
     private List<Restaurante> restaurantes;
     private Context context;
 
@@ -24,6 +24,7 @@ public class RestaurantesAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_restaurante, parent, false);
+        view.setOnCreateContextMenuListener((View.OnCreateContextMenuListener) context);
         RestauranteViewHolder holder = new RestauranteViewHolder(view);
         return holder;
     }
