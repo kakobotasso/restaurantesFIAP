@@ -51,6 +51,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         getWritableDatabase().insert(TABELA_USUARIOS, null, values);
     }
 
+    public int procuraUsuario(String login, String senha){
+        List<Usuario> usuarios = new ArrayList<>();
+        String sql = "SELECT * FROM " + TABELA_USUARIOS
+                + " WHERE login='"+ login.trim() +"' AND senha='"+ senha.trim() +"';";
+
+        Cursor c = getReadableDatabase().rawQuery(sql, null);
+
+        while(c.moveToNext()){
+            Usuario usuario = new Usuario();
+            usuarios.add(usuario);
+        }
+
+        return usuarios.size();
+    }
+
     // RESTAURANTES ***************
     private String criaTabelaRestaurantes(){
         String sql = "CREATE TABLE " + TABELA_RESTAURANTES

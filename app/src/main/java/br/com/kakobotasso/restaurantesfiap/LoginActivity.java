@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import br.com.kakobotasso.restaurantesfiap.database.DatabaseHelper;
 import br.com.kakobotasso.restaurantesfiap.utils.Constantes;
 import br.com.kakobotasso.restaurantesfiap.utils.Preferencias;
 import br.com.kakobotasso.restaurantesfiap.models.Usuario;
@@ -46,12 +47,10 @@ public class LoginActivity extends AppCompatActivity {
         String senha = senhaEdit.getText().toString();
 
         if( formularioPreenchido() ){
-            // TODO: Buscar no banco caso a variavel esteja null
             if( usuario != null ){
                 logar(login, senha);
             }else{
-                Toast.makeText(this, R.string.erro_usuario, Toast.LENGTH_SHORT).show();
-                finish();
+                procuraNoBanco(login, senha);
             }
         }
     }
@@ -80,6 +79,19 @@ public class LoginActivity extends AppCompatActivity {
 
             vaiParaDashboard();
 
+        }else{
+            Toast.makeText(this, R.string.erro_login, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void procuraNoBanco(String usuario, String senha){
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        if( databaseHelper.procuraUsuario(usuario, senha) > 0 ){
+            if( logadoCheck.isChecked() ){
+                preferencias.manterLogado();
+            }
+
+            vaiParaDashboard();
         }else{
             Toast.makeText(this, R.string.erro_login, Toast.LENGTH_SHORT).show();
         }
